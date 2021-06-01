@@ -1,0 +1,45 @@
+.movieInfo {
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+  background: silver;
+  position: relative;
+}
+
+.movieImg {
+  width: 100%;
+}
+
+.movieInfo-button {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  background: red;
+  border-radius: 10px;
+  color: white;
+  width: 50px;
+}
+
+.movie-vote_average {
+  width: 50px;
+  height: 50px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  position: absolute;
+  z-index: 1;
+  left: -20px;
+  top: -7px;
+}
+
+.movieInfo-title {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}

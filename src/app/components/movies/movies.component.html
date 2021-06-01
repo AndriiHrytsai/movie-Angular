@@ -1,0 +1,13 @@
+<div class="movieInfoContainer">
+  <app-movie *ngFor="let mv of movies.results" [movie]="mv"></app-movie>
+</div>
+<div class="movieButtonContainer">
+  <button class="movieButton" (click)="last(1)">first</button>
+  <button class="movieButton" (click)="previous(1)">Previous</button>
+
+  <p class="movieButtonPage">{{movies.page}}</p>
+
+  <button class="movieButton" (click)="next(1)">Next</button>
+  <button class="movieButton" (click)="end(1)">end</button>
+</div>
+

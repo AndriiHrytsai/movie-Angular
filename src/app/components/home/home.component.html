@@ -1,0 +1,9 @@
+<div class="populars-container">
+  <h1 class="populars-text">Populars Film</h1>
+</div>
+
+<p *ngFor="let movie of movie.results">
+  <img class="movieImg" [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="{{movie.id}}"><br>
+  {{movie.title}}
+</p>
+

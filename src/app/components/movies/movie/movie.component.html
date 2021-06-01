@@ -1,0 +1,6 @@
+<div class="movieInfo">
+  <img class="movieImg" [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="{{movie.id}}"><br>
+  <a class="movieInfo-title" [routerLink]="[movie.id]">{{movie.title}}</a>
+  <p class="movie-vote_average">{{movie.vote_average}}</p>
+  <button class="movieInfo-button">Like</button>
+</div>

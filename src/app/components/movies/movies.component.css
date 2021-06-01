@@ -1,0 +1,28 @@
+.movieInfoContainer {
+  width: 1300px;
+  margin: 0 auto;
+  /*background: aquamarine;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.movieButton {
+  width: 80px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  margin: 0 2px 0 2px;
+}
+
+.movieButtonContainer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.movieButtonPage{
+  margin: 0 10px 0 10px;
+  font-size: 20px;
+  font-weight: 650;
+}
