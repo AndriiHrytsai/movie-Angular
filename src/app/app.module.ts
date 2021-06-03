@@ -12,7 +12,7 @@ import {LikeComponent} from './components/like/like.component';
 import {MovieDetailsComponent} from './components/movies/movie-details/movie-details.component';
 
 let routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'movies', component: MoviesComponent},
   {path: 'movies/:id', component: MovieDetailsComponent},
   {path: 'like', component: LikeComponent}

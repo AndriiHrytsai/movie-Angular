@@ -2,8 +2,10 @@
   <h1 class="populars-text">Populars Film</h1>
 </div>
 
-<p *ngFor="let movie of movie.results">
-  <img class="movieImg" [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="{{movie.id}}"><br>
-  {{movie.title}}
-</p>
-
+<div class="popular_film">
+  <div class="one_popular_film" *ngFor="let movie of movie.results">
+    <div class="movieImg"><img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="{{movie.id}}">
+    </div>
+    <a class="popular_film_text" routerLink="movies/{{movie.id}}">{{movie.title}}</a>
+  </div>
+</div>
