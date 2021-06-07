@@ -1,5 +1,12 @@
-<div>dfsjdjkdfjfdj</div>
-<div>dfsjdjkdfjfdj</div>
-<div>dfsjdjkdfjfdj</div>
-<div>dfsjdjkdfjfdj</div>
-<div>dfsjdjkdfjfdj</div>
+<div class="movieLike-wrapper">
+  <div class="movieLike_removeAll_button">
+    <button class="movieLike_removeAll" (click)="removeAllFilm(listMovie.id)">Clean like</button>
+  </div>
+  <div class="movieLike">
+    <div class="movieLike-container" *ngFor="let info of info">
+      <img class="likeFilms-img" [src]="movieImg+info.poster_path" alt="test">
+      <p class="likeFilms-text">{{info.title}}</p>
+      <button class="likeFilms-remove" (click)="removeFilm(info.id)">X</button>
+    </div>
+  </div>
+</div>

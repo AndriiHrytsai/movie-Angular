@@ -1,0 +1,53 @@
+
+movieLike-wrapper {
+  width: 100%;
+  min-height: 700px;
+}
+
+.movieLike {
+  margin: 0 auto;
+  width: 1300px;
+  min-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movieLike-container {
+  margin: 10px;
+  width: 300px;
+  height: 500px;
+  position: relative;
+}
+
+.likeFilms-img {
+  width: 100%;
+}
+
+.likeFilms-text {
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.likeFilms-remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 40px;
+}
+
+.movieLike_removeAll {
+  border-radius: 10px;
+  background: red;
+  height: 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.movieLike_removeAll_button {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -12,9 +12,11 @@ import {MovieVideo} from "../../../models/video";
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
+  private like = JSON.parse(<string>localStorage.getItem("like"));
+  listMovie = this.like || [];
   movie: MovieInfo
   id: number
-  video: MovieVideo
+  video: MovieVideo;
 
   constructor(
     private movieService: MovieService,
@@ -32,6 +34,15 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  addToLike(movie: object): void {
+    this.listMovie.push(movie);
+    localStorage.setItem('like', JSON.stringify(this.listMovie))
+  }
+
+  likeFilm() {
+    return this.listMovie.find((value: any) => value.id === this.id)
   }
 
   backgroundImg(url: string) {

@@ -10,11 +10,11 @@ export class MovieComponent implements OnInit {
   @Input()
   movie: MovieInfo
 
-
   constructor() {
   }
 
   ngOnInit(): void {
   }
+
 
 }

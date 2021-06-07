@@ -10,6 +10,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from './components/home/home.component';
 import {LikeComponent} from './components/like/like.component';
 import {MovieDetailsComponent} from './components/movies/movie-details/movie-details.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 let routes: Routes = [
   {path: '', component: HomeComponent},
@@ -31,7 +33,9 @@ let routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

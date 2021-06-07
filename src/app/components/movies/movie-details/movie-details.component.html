@@ -17,9 +17,23 @@
         </div>
         <p class="movieDetails-info-vote_average">{{movie.vote_average}}</p>
         <p>Overview: {{movie.overview}}</p>
+        <div class="buttonLike" *ngIf="!likeFilm()">
+          <button style="background: none " mat-fab [disabled]="likeFilm()" (click)="addToLike(movie)"
+                  class="movieInfo-button">
+            <mat-icon color="warn" style="font-size: 50px">favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="xxx" *ngIf="likeFilm()">
+          <button style="background: none " mat-fab [disabled]="likeFilm()" (click)="addToLike(movie)"
+                  class="movieInfo-button">
+            <mat-icon color="accent" style="font-size: 50px">favorite</mat-icon>
+          </button>
+        </div>
+
       </div>
     </div>
   </div>
+
 </div>
 
 <div class="movieDetails-video">
