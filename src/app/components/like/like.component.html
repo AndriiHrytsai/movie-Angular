@@ -1,4 +1,7 @@
-<div class="movieLike-wrapper">
+<div *ngIf="!isLoading" class="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isLoading" class="movieLike-wrapper">
   <div class="movieLike_removeAll_button">
     <button class="movieLike_removeAll" (click)="removeAllFilm(listMovie.id)">Clean like</button>
   </div>

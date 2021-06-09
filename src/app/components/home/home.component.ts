@@ -8,7 +8,8 @@ import {Movie} from 'src/app/models/Movie.models';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  movie: Movie
+  movie: Movie;
+  isLoading = false;
 
   constructor(private movieService: MovieService) {
   }
@@ -17,6 +18,9 @@ export class HomeComponent implements OnInit {
     this.movieService.getPopular().subscribe(value => {
       this.movie = value
     })
+    setTimeout(() => {
+      this.isLoading = true;
+    }, 700)
   }
 
 }

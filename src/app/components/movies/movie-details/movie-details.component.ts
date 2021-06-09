@@ -5,6 +5,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {MovieService} from "../../../services/movie-service.service";
 import {MovieInfo} from "../../../models/movieInfo";
 import {MovieVideo} from "../../../models/video";
+import {DataTransferService} from "../../../services/data-transfer.service";
 
 @Component({
   selector: 'app-movie-details',
@@ -20,6 +21,7 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
+    private dataTransferService: DataTransferService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private sanitizer: DomSanitizer) {
@@ -39,6 +41,8 @@ export class MovieDetailsComponent implements OnInit {
   addToLike(movie: object): void {
     this.listMovie.push(movie);
     localStorage.setItem('like', JSON.stringify(this.listMovie))
+    this.dataTransferService.store.next(this.listMovie.length)
+    localStorage.setItem('likeNumber', JSON.stringify(this.dataTransferService.store.value))
   }
 
   likeFilm() {

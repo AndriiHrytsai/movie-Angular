@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DataTransferService} from "../../services/data-transfer.service";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  likeMovie: number;
 
-  ngOnInit(): void {
+  constructor(private dataTransferService: DataTransferService) {
   }
 
+  ngOnInit(): void {
+    console.log(this.dataTransferService.store.getValue())
+  }
+
+  likeCounter(): void {
+    return JSON.parse(<string>localStorage.getItem('likeNumber'))
+  }
 }

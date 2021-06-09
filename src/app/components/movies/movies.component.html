@@ -1,7 +1,10 @@
-<div class="movieInfoContainer">
+<div *ngIf="!isLoading" class="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isLoading" class="movieInfoContainer">
   <app-movie *ngFor="let mv of movies.results" [movie]="mv"></app-movie>
 </div>
-<div class="movieButtonContainer">
+<div *ngIf="isLoading" class="movieButtonContainer">
   <button class="movieButton" (click)="last(1)" [disabled]="movies.page===1">first</button>
   <button class="movieButton" (click)="previous(1)" [disabled]="movies.page===1">Previous</button>
 

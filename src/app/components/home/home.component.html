@@ -1,8 +1,11 @@
-<div class="populars-container">
-  <h1 class="populars-text">Populars Film</h1>
+<div *ngIf="!isLoading" class="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isLoading" class="populars-container">
+  <p class="populars-text">Populars Film</p>
 </div>
 
-<div class="popular_film">
+<div *ngIf="isLoading" class="popular_film">
   <div class="one_popular_film" *ngFor="let movie of movie.results">
     <div class="movieImg"><img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="{{movie.id}}">
     </div>
