@@ -12,6 +12,8 @@ export class MovieService {
   baseUrl = "https://api.themoviedb.org/3";
   apiKey = "?api_key=8aaf14eada5c1779a594aaa553b31207";
   page = "&page=";
+  query = '&query=';
+  searchUrl = '/search/movie'
 
   constructor(private httpClient: HttpClient) {
   }
@@ -30,6 +32,10 @@ export class MovieService {
 
   getPopular(): Observable<Movie> {
     return this.httpClient.get<Movie>(this.baseUrl + "/movie/popular" + this.apiKey + "&page=1")
+  }
+
+  searchFilm(text: string): Observable<Movie> {
+    return this.httpClient.get<Movie>(this.baseUrl + this.searchUrl + this.apiKey + this.query + text)
   }
 
 }

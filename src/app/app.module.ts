@@ -14,6 +14,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatBadgeModule} from "@angular/material/badge";
+import {ReactiveFormsModule} from "@angular/forms";
 
 let routes: Routes = [
   {path: '', component: HomeComponent},
@@ -32,15 +33,16 @@ let routes: Routes = [
     LikeComponent,
     MovieDetailsComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-    MatButtonModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatBadgeModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot(routes),
+        MatButtonModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatBadgeModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

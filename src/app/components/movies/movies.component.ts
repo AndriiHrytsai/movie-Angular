@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from "../../models/Movie.models";
 import {MovieService} from "../../services/movie-service.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-movies',
@@ -10,6 +11,11 @@ import {MovieService} from "../../services/movie-service.service";
 export class MoviesComponent implements OnInit {
   movies: Movie
   isLoading = false
+  searchControl = new FormControl('');
+  myFormGroup = new FormGroup({
+    search: this.searchControl
+  });
+
 
   constructor(private movieService: MovieService) {
   }
@@ -63,5 +69,24 @@ export class MoviesComponent implements OnInit {
       this.isLoading = true;
     }, 500)
   }
+
+  search() {
+    const searchFilm = this.myFormGroup.value
+    console.log(searchFilm)
+    if (searchFilm === '') {
+      this.movieService.getMovie(1).subscribe(value => {
+        this.movies = value
+      })
+    } else {
+      this.movieService.searchFilm(searchFilm.search).subscribe(value => {
+        this.movies = value
+      })
+    }
+    this.isLoading = false
+    setTimeout(() => {
+      this.isLoading = true;
+    }, 350)
+  }
+
 
 }
